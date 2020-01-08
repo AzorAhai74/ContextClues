@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    for (let n = 1; n < 101; n++) {
+    for (var n = 1; n < 101; n++) {
     let $header3 = $('<h3></h3>');
     let $header3Text = 'Accusation' +  ' ' + n;
 
@@ -7,9 +7,11 @@ $(document).ready(function() {
     $('body').append($header3);
     }
     
-    let friends = ['Liz', 'Randall', 'Laura', 'John', 'Margie'];
+    var friends = ['Liz', 'Randall', 'Laura', 'John', 'Margie'];
 
-    let locations = ['Hotel', 'Dyrons', 'Top Golf','UAB', 'Oak Mountain', 'Flora Bama', 'Avondale Brewery', 'Jordan Hare Staduim', 'Bryant Denny Stadium', 'Madison Square Garden'];
+    var locations = ['Hotel', 'Dyrons', 'Top Golf','UAB', 'Oak Mountain', 'Flora Bama', 'Avondale Brewery', 'Jordan Hare Staduim', 'Bryant Denny Stadium', 'Madison Square Garden'];
 
-    let weapons = ['7 Iron', 'Juul', 'Bacon', 'Putter', '']
+    var weapons = ['7 Iron', 'Juul', 'Bacon', 'Putter', 'Blues Leash', 'Butter', 'Lobster Tail', 'Fan', 'Dip Can', 'Roomba', 'Beer Can', 'Tiger', 'Elephant', 'Eagle Claw', 'Coffee Cup', 'Golf Ball', 'Balloon', 'Xbox Controller', 'Remote Control', 'Phone Charger'];
+
+
 });
