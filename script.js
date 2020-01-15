@@ -5,6 +5,11 @@ $(document).ready(function() {
 
     var weapons = ['7 Iron','Juul','Bacon','Putter','Blues Leash','Butter','Lobster Tail','Fan','Dip Can','Roomba','Beer Can','Tiger','Elephant','Eagle Claw','Coffee Cup','Golf Ball','Balloon','Xbox Controller','Remote Control','Phone Charger'];
     
+    $('body').css({
+        'background-color': '#6db3f2'
+    });
+
+    
     
     for (var i = 1; i < 101; i++) {
     var $header3 = $('<h3></h3>');
@@ -12,9 +17,16 @@ $(document).ready(function() {
     
     $($header3).append($header3Text);
     
+    
     $header3.on('click', accusation(i));
     $('body').append($header3);
     };
+
+    $header3.on('click', function() {
+        $('<h3>').css({
+            'color': 'white'
+        });
+    });
 
     function accusation(i) {
         return function() {
