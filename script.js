@@ -1,84 +1,34 @@
 $(document).ready(function() {
-    for (var n = 1; n < 101; n++) {
+    var friends = ['Liz','Randall','Laura','John','Margie'];
+
+    var locations = ['Hotel','Dyrons','Top Golf','UAB','Oak Mountain','Flora Bama','Avondale Brewery','Jordan Hare Staduim','Bryant Denny Stadium','Madison Square Garden'];
+
+    var weapons = ['7 Iron','Juul','Bacon','Putter','Blues Leash','Butter','Lobster Tail','Fan','Dip Can','Roomba','Beer Can','Tiger','Elephant','Eagle Claw','Coffee Cup','Golf Ball','Balloon','Xbox Controller','Remote Control','Phone Charger'];
+    
+    
+    for (var i = 1; i < 101; i++) {
     var $header3 = $('<h3></h3>');
-    var $header3Text = 'Accusation' +  ' ' + n;
-
+    var $header3Text = 'Accusation' +  ' ' + [i];
     
-       
     $($header3).append($header3Text);
-    $('body').append($header3);
-
-    var friends = [
-        { name: 'Liz'},
-        { name: 'Randall'},
-        { name: 'Laura'},
-        { name: 'John'},
-        { name: 'Margie'}
-    ];
-
-    var locations = [
-        { name: 'Hotel'},
-        { name: 'Dyrons'},
-        { name: 'Top Golf'},
-        { name: 'UAB'},
-        { name: 'Oak Mountain'},
-        { name: 'Flora Bama'},
-        { name: 'Avondale Brewery'},
-        { name: 'Jordan Hare Staduim'},
-        { name: 'Bryant Denny Stadium'},
-        { name: 'Madison Square Garden'}
-    ];
-
-    var weapons = [
-        { name: '7 Iron'},
-        { name: 'Juul'},
-        { name: 'Bacon'},
-        { name: 'Putter'},
-        { name: 'Blues Leash'},
-        { name: 'Butter'},
-        { name: 'Lobster Tail'},
-        { name: 'Fan'},
-        { name: 'Dip Can'},
-        { name: 'Roomba'},
-        { name: 'Beer Can'},
-        { name: 'Tiger'},
-        { name: 'Elephant'},
-        { name: 'Eagle Claw'},
-        { name: 'Coffee Cup'},
-        { name: 'Golf Ball'},
-        { name: 'Balloon'},
-        { name: 'Xbox Controller'},
-        { name: 'Remote Control'},
-        { name: 'Phone Charger'}
-    ];
-
-
-    $header3.click(function() {
-        var i;
-
-        for (i = 0; i < friends.length && locations.length && weapons.length; i++) {
-            var f = Math.floor(Math.random()[friends[i].name * 5 - 1]);
-            var l = Math.floor(Math.random()[locations[i].name * 10 - 1]);
-            var w = Math.floor(Math.random()[weapons[i].name * 20 - 1]);
-            $($header3).click(function() {
-                alert('Accusation' + ' ' + n + ': I accuse' + f + ', with the weapon' + w + 'in the' + l + '!');
-            });
-            function alertValue() {
-                alert($('input').val());
-            }
-            $('input').change(alertValue);
-            alert($(':input[type="text"]').val());
-
-        }
-    });
     
+    $header3.on('click', accusation(i));
+    $('body').append($header3);
+    };
+
+    function accusation(i) {
+        return function() {
+            var f = friends[i % 5];
+            var l = locations[i % 10];
+            var w = weapons[i % 20];
+            alert('Accusation' + ' ' + i + ': I accuse' + ' ' + f + ', with the weapon' + ' ' + w + ' ' + 'at' + ' ' + l + '!');
+        };
+        
     };
 
 
 
     
-    
-
 
 
 });
