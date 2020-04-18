@@ -22,11 +22,6 @@ $(document).ready(function() {
     $('body').append($header3);
     };
 
-    $header3.on('click', function() {
-        $('<h3>').css({
-            'color': 'white'
-        });
-    });
 
     function accusation(i) {
         return function() {
